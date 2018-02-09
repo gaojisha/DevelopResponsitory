@@ -11,7 +11,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        test2();
+        test3();
     }
 
     private void test() {
@@ -20,5 +20,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void test2() {
         Log.i("test","2");
+    }
+
+    private void test3() {
+        Log.i("test","3");
     }
 }
