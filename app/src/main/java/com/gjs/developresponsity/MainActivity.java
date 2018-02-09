@@ -25,4 +25,8 @@ public class MainActivity extends AppCompatActivity {
     private void test3() {
         Log.i("test","3");
     }
+
+    private void test3() {
+        Log.i("test","4");
+    }
 }
