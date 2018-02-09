@@ -11,10 +11,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        test();
+        test2();
     }
 
     private void test() {
         Log.i("test","1");
+    }
+
+    private void test2() {
+        Log.i("test","2");
     }
 }
