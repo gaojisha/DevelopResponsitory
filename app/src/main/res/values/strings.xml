@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">DevelopResponsity</string>
+    <string name="delete">删除</string>
+    <string name="more">更多</string>
+    <string name="function_swiper">SwiperRevealLayout</string>
+
+    <string name="swiper_awesome_layout_1">My awesome layout 1</string>
+    <string name="swiper_awesome_layout_2">My awesome layout 2</string>
+    <string name="swiper_awesome_layout_3">My awesome layout 3</string>
+    <string name="swiper_awesome_layout_4">My awesome layout 4</string>
+
+    <string name="function_swiper_list">ListView</string>
+    <string name="function_swiper_grid">GridView</string>
+    <string name="function_swiper_recycler">RecyclerView</string>
 </resources>
