@@ -21,7 +21,7 @@ import java.util.List;
  *     author  : gaojisha
  *     e-mail  : gaojisha@feinno.com
  *     time    : 2018/04/12
- *     desc    : 必须说明该类的作用
+ *     desc    : 添加了swipeRevalLayout的RecycleView的adapter
  *     version : 1.0
  * </pre>
  */

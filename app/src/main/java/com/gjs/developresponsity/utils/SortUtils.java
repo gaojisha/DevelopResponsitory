@@ -234,7 +234,17 @@ public class SortUtils {
         return data;
     }
 
+    /**
+     * 希尔排序
+     * @param sData
+     * @param tData
+     * @param i
+     * @param m
+     * @param n
+     * @return
+     */
     private int[] merge(int[] sData, int[] tData, int i, int m, int n) {
+        //TODO 希尔排序
         int j, k, l;
         for (j = m, k = i; i < m && j < n; k++) {
             if (sData[i] < sData[j]) {
@@ -263,7 +273,7 @@ public class SortUtils {
      * @return 排序完成的数据
      */
     public int[] quickSort(int[] data) {
-
+        //TODO 快速排序
         return data;
     }
 

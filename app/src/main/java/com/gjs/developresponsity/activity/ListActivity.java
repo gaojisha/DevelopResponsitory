@@ -1,14 +1,11 @@
 package com.gjs.developresponsity.activity;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.ListAdapter;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
-import android.widget.SimpleAdapter;
 
 import com.gjs.developresponsity.R;
 import com.gjs.developresponsity.adapter.SwipeListAdapter;
-import com.gjs.developresponsity.model.YourDataObject;
 
 import java.util.ArrayList;
 
