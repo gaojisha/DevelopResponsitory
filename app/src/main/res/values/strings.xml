@@ -3,6 +3,8 @@
     <string name="delete">删除</string>
     <string name="more">更多</string>
     <string name="function_swiper">SwiperRevealLayout</string>
+    <string name="function_image_tool">ImageCompress</string>
+    <string name="function_audio_tool">ImageCompress</string>
 
     <string name="swiper_awesome_layout_1">My awesome layout 1</string>
     <string name="swiper_awesome_layout_2">My awesome layout 2</string>

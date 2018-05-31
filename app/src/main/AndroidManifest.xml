@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.gjs.developresponsity">
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -21,7 +24,10 @@
         <activity android:name=".activity.SwiperRevealLayoutActivity" />
         <activity android:name=".activity.GridActivity" />
         <activity android:name=".activity.ListActivity" />
-        <activity android:name=".activity.RecyclerActivity"></activity>
+        <activity android:name=".activity.RecyclerActivity" />
+        <activity android:name=".activity.image.ImageActivity" />
+        <activity android:name=".activity.audio.AudioActivity" />
+        <activity android:name=".activity.PermissionActivity"></activity>
     </application>
 
 </manifest>

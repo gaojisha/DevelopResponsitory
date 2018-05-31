@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import com.chauthai.swipereveallayout.SwipeRevealLayout;
@@ -12,7 +13,9 @@ import com.chauthai.swipereveallayout.ViewBinderHelper;
 import com.gjs.developresponsity.R;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * <pre>
@@ -29,12 +32,21 @@ public class SwipeListAdapter extends ArrayAdapter {
     private List<String> mDataList = new ArrayList<>();
     private final LayoutInflater mLayoutInflater;
     private final ViewBinderHelper mBinderhelper;
+    private HashMap<String, Boolean> mSelectList;
+    private boolean isSelectAll = true;
 
-    public SwipeListAdapter(Context context, List<String> dataObjects){
+    private boolean isVisible = false;
+
+    public SwipeListAdapter(Context context, List<String> dataObjects,HashMap<String,Boolean> selectList){
         super(context, R.layout.item_list,dataObjects);
         mLayoutInflater = LayoutInflater.from(context);
         mDataList = dataObjects;
         mBinderhelper = new ViewBinderHelper();
+        this.mSelectList = selectList;
+    }
+
+    public void setSelectAll(boolean isSelectAll) {
+        this.isSelectAll = isSelectAll;
     }
 
     @Override
@@ -52,14 +64,20 @@ public class SwipeListAdapter extends ArrayAdapter {
         return i;
     }
 
+    public void setCheckVisible(boolean visible){
+        this.isVisible = visible;
+        notifyDataSetChanged();
+    }
+
     @Override
-    public View getView(int i, View convertView, ViewGroup viewGroup) {
+    public View getView(final int i, View convertView, ViewGroup viewGroup) {
         ViewHolder holder = null;
         if(convertView == null){
             convertView = mLayoutInflater.inflate(R.layout.item_list, null);
             holder = new ViewHolder();
             holder.content = convertView.findViewById(R.id.list_content);
             holder.delete = convertView.findViewById(R.id.list_delete);
+            holder.checkBox = convertView.findViewById(R.id.list_select_item);
             holder.swipeRevealLayout = convertView.findViewById(R.id.list_swipe);
             convertView.setTag(holder);
         } else {
@@ -68,23 +86,65 @@ public class SwipeListAdapter extends ArrayAdapter {
 
         final String item = getItem(i);
         if(item != null) {
-            mBinderhelper.bind(holder.swipeRevealLayout, item);
+            holder.content.setText(item);
+            if(isVisible) {
+                holder.checkBox.setVisibility(View.VISIBLE);
+            } else {
+                mBinderhelper.bind(holder.swipeRevealLayout, item);
+                holder.checkBox.setVisibility(View.GONE);
+            }
+
+            holder.checkBox.setChecked(mSelectList.containsKey(item));
             holder.delete.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     remove(item);
+                    notifyDataSetChanged();
+                    for (Map.Entry entry:mSelectList.entrySet()){
+                        System.out.println("key : " + entry.getKey() + " value : " + entry.getValue());
+                    }
                 }
             });
-            holder.content.setText(item);
+            holder.checkBox.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(!mSelectList.containsKey(item)) {
+                        mSelectList.put(item, true);
+                    } else {
+                        mSelectList.remove(item);
+                    }
+
+//                    mSelectList.put(item,!mSelectList.containsKey(item));
+                    notifyDataSetChanged();
+                    for (Map.Entry entry:mSelectList.entrySet()){
+                        System.out.println("key : " + entry.getKey() + " value : " + entry.getValue());
+                    }
+                }
+            });
         }
 
         return convertView;
+    }
+
+    public HashMap<String,Boolean> selectAll(){
+        if(isSelectAll){
+            isSelectAll = false;
+            for (String item:mDataList) {
+                mSelectList.put(item,true);
+            }
+        } else {
+            isSelectAll = true;
+            mSelectList.clear();
+        }
+        notifyDataSetChanged();
+        return mSelectList;
     }
 
     private class ViewHolder{
         private SwipeRevealLayout swipeRevealLayout;
         private TextView content;
         private TextView delete;
+        private CheckBox checkBox;
     }
 
 }

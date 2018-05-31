@@ -219,9 +219,8 @@ public class SortUtils {
         return data;
     }
 
-    private int[] mSort(int[] sdata, int[] tData, int s, int t) {
+    private void mSort(int[] sdata, int[] tData, int s, int t) {
         int m;
-        int[] data = {};
         int[] tData2 = new int[t + 1];
         if (s == t) {
             tData[s] = sdata[s];
@@ -229,13 +228,12 @@ public class SortUtils {
             m = (s + t) / 2;
             mSort(sdata, tData2, s, m);
             mSort(sdata, tData2, m + 1, t);
-            data = merge(tData, tData2, s, m, t);
+            merge(tData, tData2, s, m, t);
         }
-        return data;
     }
 
     /**
-     * 希尔排序
+     *  归并排序
      * @param sData
      * @param tData
      * @param i
@@ -244,7 +242,6 @@ public class SortUtils {
      * @return
      */
     private int[] merge(int[] sData, int[] tData, int i, int m, int n) {
-        //TODO 希尔排序
         int j, k, l;
         for (j = m, k = i; i < m && j < n; k++) {
             if (sData[i] < sData[j]) {

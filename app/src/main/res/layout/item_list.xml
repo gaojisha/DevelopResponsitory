@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
@@ -7,13 +7,13 @@
     <com.chauthai.swipereveallayout.SwipeRevealLayout
         android:id="@+id/list_swipe"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_margin="10dp"
+        android:layout_height="@dimen/dp_sixty"
+        android:layout_margin="@dimen/dp_ten"
         android:background="@drawable/border_solid_white"
         app:mode="same_level"
         app:dragEdge="right">
         <LinearLayout
-            android:layout_width="50dp"
+            android:layout_width="@dimen/dp_fifty"
             android:layout_height="match_parent">
             <TextView
                 android:id="@+id/list_delete"
@@ -35,5 +35,12 @@
                 android:text="@string/app_name"/>
         </FrameLayout>
     </com.chauthai.swipereveallayout.SwipeRevealLayout>
+    <CheckBox
+        android:id="@+id/list_select_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/dp_twenty"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"/>
 
-</LinearLayout>
+</RelativeLayout>

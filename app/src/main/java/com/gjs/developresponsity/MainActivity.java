@@ -1,33 +1,60 @@
 package com.gjs.developresponsity;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import com.gjs.developresponsity.activity.SwiperRevealLayoutActivity;
+import com.gjs.developresponsity.activity.audio.AudioActivity;
+import com.gjs.developresponsity.activity.image.ImageActivity;
 import com.gjs.developresponsity.datastructure.LinearArray;
 import com.gjs.developresponsity.utils.SortUtils;
+import com.gjs.developresponsity.utils.permission.Permission;
+import com.gjs.developresponsity.utils.permission.PermissionResult;
 
 public class MainActivity extends Activity {
+
+    private String[] REQUEST_PERMISSIONS = new String[]{Manifest.permission.READ_EXTERNAL_STORAGE,Manifest.permission.WRITE_EXTERNAL_STORAGE};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        sortUtiltest();
+        Permission.checkPermission(MainActivity.this, REQUEST_PERMISSIONS, new PermissionResult() {
+            @Override
+            public void success() {
+                Toast.makeText(MainActivity.this,"获取权限成功",Toast.LENGTH_SHORT).show();
+            }
 
-
+            @Override
+            public void fail() {
+                Toast.makeText(MainActivity.this,"获取权限失败",Toast.LENGTH_SHORT).show();
+            }
+        });
     }
+
+
+/**===========================================================分割线==============================================================================*/
 
     public void functionswiper(View v){
         startActivity(new Intent(MainActivity.this, SwiperRevealLayoutActivity.class));
     }
 
+    public void imagetool(View v){
+        startActivity(new Intent(MainActivity.this, ImageActivity.class));
+    }
+
+    public void audiotool(View v){
+        startActivity(new Intent(MainActivity.this, AudioActivity.class));
+    }
+
     private void sortUtiltest() {
-//        testLinearArrayInsert();
-//        testLinearArrayDelete();
+        testLinearArrayInsert();
+        testLinearArrayDelete();
 
         int[] sorData = {9,0,1,8,7,3,4,6,2,5};
         int[] bubblesortData = {9,0,1,8,7,3,4,6,2,5};
@@ -99,5 +126,4 @@ public class MainActivity extends Activity {
             }
         }
     }
-
 }
