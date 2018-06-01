@@ -1,1 +1,1 @@
-include ':app', ':demo', ':swipe-reveal-layout'
+include ':app', ':swipe-reveal-layout', ':yflibrary'

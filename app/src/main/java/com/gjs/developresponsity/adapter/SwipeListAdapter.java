@@ -47,6 +47,7 @@ public class SwipeListAdapter extends ArrayAdapter {
 
     public void setSelectAll(boolean isSelectAll) {
         this.isSelectAll = isSelectAll;
+        selectAll();
     }
 
     @Override
@@ -87,10 +88,10 @@ public class SwipeListAdapter extends ArrayAdapter {
         final String item = getItem(i);
         if(item != null) {
             holder.content.setText(item);
+            mBinderhelper.bind(holder.swipeRevealLayout, item);
             if(isVisible) {
                 holder.checkBox.setVisibility(View.VISIBLE);
             } else {
-                mBinderhelper.bind(holder.swipeRevealLayout, item);
                 holder.checkBox.setVisibility(View.GONE);
             }
 

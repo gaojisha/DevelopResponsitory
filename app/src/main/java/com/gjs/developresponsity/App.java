@@ -2,6 +2,8 @@ package com.gjs.developresponsity;
 
 import android.app.Application;
 
+import com.tencent.bugly.crashreport.CrashReport;
+
 /**
  * <pre>
  *     author  : gaojisha
@@ -13,4 +15,10 @@ import android.app.Application;
  */
 
 public class App extends Application {
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        CrashReport.initCrashReport(getApplicationContext(), "2dacfad42e", false);
+    }
 }

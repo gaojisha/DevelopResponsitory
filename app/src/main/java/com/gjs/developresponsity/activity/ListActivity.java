@@ -44,12 +44,13 @@ public class ListActivity extends AppCompatActivity {
             case R.id.action_select_all:
                 if("编辑".equals(item.getTitle().toString())) {
                     item.setTitle("全选");
-                    mAdapter.setSelectAll(false);
                     mAdapter.setCheckVisible(true);
                 } else if("全选".equals(item.getTitle().toString())) {
-                    mAdapter.selectAll();
+                    mAdapter.setSelectAll(true);
+//                    mAdapter.selectAll();
                     item.setTitle("取消");
                 } else if("取消".equals(item.getTitle().toString())) {
+                    mAdapter.setSelectAll(false);
                     mAdapter.setCheckVisible(false);
                     item.setTitle("编辑");
                 }

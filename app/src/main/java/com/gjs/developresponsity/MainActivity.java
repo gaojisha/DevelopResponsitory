@@ -18,12 +18,18 @@ import com.gjs.developresponsity.utils.permission.PermissionResult;
 
 public class MainActivity extends Activity {
 
-    private String[] REQUEST_PERMISSIONS = new String[]{Manifest.permission.READ_EXTERNAL_STORAGE,Manifest.permission.WRITE_EXTERNAL_STORAGE};
+    private String[] REQUEST_PERMISSIONS = new String[]{Manifest.permission.READ_EXTERNAL_STORAGE,
+            Manifest.permission.WRITE_EXTERNAL_STORAGE,
+            Manifest.permission.INTERNET,
+            Manifest.permission.ACCESS_NETWORK_STATE,
+            Manifest.permission.ACCESS_WIFI_STATE,
+            Manifest.permission.READ_PHONE_STATE};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         Permission.checkPermission(MainActivity.this, REQUEST_PERMISSIONS, new PermissionResult() {
             @Override
             public void success() {

@@ -1,5 +1,6 @@
 package com.gjs.developresponsity.activity;
 
+import android.Manifest;
 import android.content.Intent;
 import android.net.Uri;
 import android.provider.Settings;
@@ -142,6 +143,10 @@ public class PermissionActivity extends AppCompatActivity {
         map.put("android.permission.RECEIVE_WAP_PUSH", "接收Wap Push");
         map.put("android.permission.RECEIVE_MMS", "接收短信");
         map.put("android.permission.SEND_SMS", "发送短信");
+        map.put("android.permission.INTERNET","获取网络连接权限");
+        map.put("android.permission.ACCESS_NETWORK_STATE","网络连接状态");
+        map.put("android.permission.ACCESS_WIFI_STATE","WIFI连接状态");
+        map.put("android.permission.READ_LOGS","读取日志信息");
         map.put("android.permission.READ_CELL_BROADCASTS", "READ_CELL_BROADCASTS");
     }
 
