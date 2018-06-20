@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_video_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="7.5dp"
+        android:layout_centerInParent="true"
+        android:layout_marginRight="8dp"
+        android:max="100"
+        android:progress="100"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_Progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/progressBar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="23dp"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="18dp"
+        android:text=""
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/downLoad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="100dp"
+        android:text="下载"
+        android:visibility="gone"/>
+
+
+    <Button
+        android:id="@+id/pause"
+        android:layout_toRightOf="@id/downLoad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="48dp"
+        android:layout_marginStart="48dp"
+        android:text="暂停"
+        android:visibility="gone"/>
+
+</RelativeLayout>

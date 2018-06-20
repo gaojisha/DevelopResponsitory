@@ -8,9 +8,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
-import com.gjs.developresponsity.activity.SwiperRevealLayoutActivity;
-import com.gjs.developresponsity.activity.audio.AudioActivity;
-import com.gjs.developresponsity.activity.image.ImageActivity;
+import com.gjs.developresponsity.activity.DbTestActivity;
+import com.gjs.developresponsity.view.SwiperRevealLayoutActivity;
+import com.gjs.developresponsity.activity.AudioActivity;
+import com.gjs.developresponsity.activity.ImageActivity;
 import com.gjs.developresponsity.datastructure.LinearArray;
 import com.gjs.developresponsity.utils.SortUtils;
 import com.gjs.developresponsity.utils.permission.Permission;
@@ -30,6 +31,9 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        /**
+         * 权限申请
+         */
         Permission.checkPermission(MainActivity.this, REQUEST_PERMISSIONS, new PermissionResult() {
             @Override
             public void success() {
@@ -56,6 +60,13 @@ public class MainActivity extends Activity {
 
     public void audiotool(View v){
         startActivity(new Intent(MainActivity.this, AudioActivity.class));
+    }
+
+    /**
+     * GreenDao数据库  视频downLoad
+     */
+    public void greendaotool(View v){
+        startActivity(new Intent(MainActivity.this, DbTestActivity.class));
     }
 
     private void sortUtiltest() {

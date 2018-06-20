@@ -92,7 +92,7 @@ public class ImageTools {
      * @return
      */
     public static void saveCutCompressImage(String inputFilepath, Quality q, String outputFilepath, int s_x, int s_y, int e_x, int e_y) {
-        ImageNativeUtil.cutCompressBitmap(inputFilepath, outputFilepath, true, q, s_x, s_y, e_x, e_y);
+        ImageNativeUtil.compressBitmapCut(inputFilepath, outputFilepath, true, q, s_x, s_y, e_x, e_y);
     }
 
     /**

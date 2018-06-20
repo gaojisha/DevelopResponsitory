@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
-    tools:context="com.gjs.developresponsity.activity.SwiperRevealLayoutActivity">
+    tools:context="com.gjs.developresponsity.view.SwiperRevealLayoutActivity">
 
     <!--<android.support.v7.widget.Toolbar-->
         <!--android:id="@+id/toolbar"-->

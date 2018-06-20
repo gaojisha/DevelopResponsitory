@@ -70,7 +70,7 @@ public class SwipeRecyclerAdapter extends RecyclerView.Adapter {
         viewBinderHelper.restoreStates(inState);
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    private class ViewHolder extends RecyclerView.ViewHolder{
 
         private SwipeRevealLayout swipeRevealLayout;
         private TextView content;

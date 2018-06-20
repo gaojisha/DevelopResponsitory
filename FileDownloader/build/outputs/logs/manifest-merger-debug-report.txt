@@ -1,0 +1,57 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/icbc/Documents/H5/h5Project_n/SAMPLE/DevelopResponsitory/FileDownloader/src/main/AndroidManifest.xml:1:1-13:12
+INJECTED from /Users/icbc/Documents/H5/h5Project_n/SAMPLE/DevelopResponsitory/FileDownloader/src/main/AndroidManifest.xml:1:1-13:12
+INJECTED from /Users/icbc/Documents/H5/h5Project_n/SAMPLE/DevelopResponsitory/FileDownloader/src/main/AndroidManifest.xml:1:1-13:12
+INJECTED from /Users/icbc/Documents/H5/h5Project_n/SAMPLE/DevelopResponsitory/FileDownloader/src/main/AndroidManifest.xml:1:1-13:12
+INJECTED from /Users/icbc/Documents/H5/h5Project_n/SAMPLE/DevelopResponsitory/FileDownloader/src/main/AndroidManifest.xml:1:1-13:12
+INJECTED from /Users/icbc/Documents/H5/h5Project_n/SAMPLE/DevelopResponsitory/FileDownloader/src/main/AndroidManifest.xml:1:1-13:12
+INJECTED from /Users/icbc/Documents/H5/h5Project_n/SAMPLE/DevelopResponsitory/FileDownloader/src/main/AndroidManifest.xml:1:1-13:12
+	package
+		ADDED from /Users/icbc/Documents/H5/h5Project_n/SAMPLE/DevelopResponsitory/FileDownloader/src/main/AndroidManifest.xml:2:5-37
+		INJECTED from /Users/icbc/Documents/H5/h5Project_n/SAMPLE/DevelopResponsitory/FileDownloader/src/main/AndroidManifest.xml
+		INJECTED from /Users/icbc/Documents/H5/h5Project_n/SAMPLE/DevelopResponsitory/FileDownloader/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/icbc/Documents/H5/h5Project_n/SAMPLE/DevelopResponsitory/FileDownloader/src/main/AndroidManifest.xml
+		ADDED from /Users/icbc/Documents/H5/h5Project_n/SAMPLE/DevelopResponsitory/FileDownloader/src/main/AndroidManifest.xml:1:1-13:12
+		INJECTED from /Users/icbc/Documents/H5/h5Project_n/SAMPLE/DevelopResponsitory/FileDownloader/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/icbc/Documents/H5/h5Project_n/SAMPLE/DevelopResponsitory/FileDownloader/src/main/AndroidManifest.xml
+		ADDED from /Users/icbc/Documents/H5/h5Project_n/SAMPLE/DevelopResponsitory/FileDownloader/src/main/AndroidManifest.xml:1:1-13:12
+		INJECTED from /Users/icbc/Documents/H5/h5Project_n/SAMPLE/DevelopResponsitory/FileDownloader/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/icbc/Documents/H5/h5Project_n/SAMPLE/DevelopResponsitory/FileDownloader/src/main/AndroidManifest.xml:3:5-63
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /Users/icbc/Documents/H5/h5Project_n/SAMPLE/DevelopResponsitory/FileDownloader/src/main/AndroidManifest.xml:6:5-78
+	android:name
+		ADDED from /Users/icbc/Documents/H5/h5Project_n/SAMPLE/DevelopResponsitory/FileDownloader/src/main/AndroidManifest.xml:6:22-76
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from /Users/icbc/Documents/H5/h5Project_n/SAMPLE/DevelopResponsitory/FileDownloader/src/main/AndroidManifest.xml:7:5-75
+	android:name
+		ADDED from /Users/icbc/Documents/H5/h5Project_n/SAMPLE/DevelopResponsitory/FileDownloader/src/main/AndroidManifest.xml:7:22-73
+uses-permission#android.permission.CHANGE_WIFI_STATE
+ADDED from /Users/icbc/Documents/H5/h5Project_n/SAMPLE/DevelopResponsitory/FileDownloader/src/main/AndroidManifest.xml:8:5-75
+	android:name
+		ADDED from /Users/icbc/Documents/H5/h5Project_n/SAMPLE/DevelopResponsitory/FileDownloader/src/main/AndroidManifest.xml:8:22-73
+uses-permission#android.permission.INTERNET
+ADDED from /Users/icbc/Documents/H5/h5Project_n/SAMPLE/DevelopResponsitory/FileDownloader/src/main/AndroidManifest.xml:9:5-66
+	android:name
+		ADDED from /Users/icbc/Documents/H5/h5Project_n/SAMPLE/DevelopResponsitory/FileDownloader/src/main/AndroidManifest.xml:9:22-64
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /Users/icbc/Documents/H5/h5Project_n/SAMPLE/DevelopResponsitory/FileDownloader/src/main/AndroidManifest.xml:11:5-80
+	android:name
+		ADDED from /Users/icbc/Documents/H5/h5Project_n/SAMPLE/DevelopResponsitory/FileDownloader/src/main/AndroidManifest.xml:11:22-78
+uses-sdk
+INJECTED from /Users/icbc/Documents/H5/h5Project_n/SAMPLE/DevelopResponsitory/FileDownloader/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/icbc/Documents/H5/h5Project_n/SAMPLE/DevelopResponsitory/FileDownloader/src/main/AndroidManifest.xml
+INJECTED from /Users/icbc/Documents/H5/h5Project_n/SAMPLE/DevelopResponsitory/FileDownloader/src/main/AndroidManifest.xml
+INJECTED from /Users/icbc/Documents/H5/h5Project_n/SAMPLE/DevelopResponsitory/FileDownloader/src/main/AndroidManifest.xml
+INJECTED from /Users/icbc/Documents/H5/h5Project_n/SAMPLE/DevelopResponsitory/FileDownloader/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/icbc/Documents/H5/h5Project_n/SAMPLE/DevelopResponsitory/FileDownloader/src/main/AndroidManifest.xml
+		ADDED from /Users/icbc/Documents/H5/h5Project_n/SAMPLE/DevelopResponsitory/FileDownloader/src/main/AndroidManifest.xml
+		INJECTED from /Users/icbc/Documents/H5/h5Project_n/SAMPLE/DevelopResponsitory/FileDownloader/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/icbc/Documents/H5/h5Project_n/SAMPLE/DevelopResponsitory/FileDownloader/src/main/AndroidManifest.xml
+		ADDED from /Users/icbc/Documents/H5/h5Project_n/SAMPLE/DevelopResponsitory/FileDownloader/src/main/AndroidManifest.xml
+		INJECTED from /Users/icbc/Documents/H5/h5Project_n/SAMPLE/DevelopResponsitory/FileDownloader/src/main/AndroidManifest.xml

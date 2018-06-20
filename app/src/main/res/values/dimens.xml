@@ -3,4 +3,5 @@
     <dimen name="dp_twenty">20dp</dimen>
     <dimen name="dp_fifty">50dp</dimen>
     <dimen name="dp_sixty">60dp</dimen>
+    <dimen name="dp_eighty">80dp</dimen>
 </resources>

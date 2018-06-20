@@ -7,6 +7,7 @@ import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.text.TextUtils;
 
+
 public class ImageNativeUtil {
 	private static int DEFAULT_QUALITY = 95;
 
@@ -32,30 +33,6 @@ public class ImageNativeUtil {
 
 	}
 
-	public static void compressBitmap(String input, String output, boolean optimize, ImageTools.Quality q) {
-		String fileType = getFileType(input);
-		zoomcompress(input.getBytes(), output.getBytes(), optimize, q.getQuality(), fileType);
-	}
-
-	public static void cutCompressBitmap(String input, String output, boolean optimize, ImageTools.Quality q, int s_x, int s_y, int e_x, int e_y){
-		String fileType = getFileType(input);
-		zoomcompressCut(input.getBytes(), output.getBytes(), optimize, q.getQuality(), s_x, s_y, e_x, e_y,fileType);
-	}
-
-	private static void saveBitmap(Bitmap bit, int quality, String fileName, boolean optimize) {
-		compressBitmap(bit, bit.getWidth(), bit.getHeight(), quality, fileName.getBytes(), optimize);
-	}
-
-	private static native String compressBitmap(Bitmap bit, int w, int h, int quality, byte[] fileNameBytes,
-			boolean optimize);
-
-	private static native long zoomcompress(byte[] input, byte[] output, boolean optimize, int q,String fileType);
-	private static native long zoomcompressCut(byte[] input, byte[] output, boolean optimize, int q, int s_x, int s_y, int e_x, int e_y,String fileType);
-	static {
-		// System.loadLibrary("jpegcompress");
-		System.loadLibrary("jpegcompressjni");
-	}
-
 	private static String getFileType(String path) {
 		BitmapFactory.Options options = new BitmapFactory.Options();
 		options.inJustDecodeBounds = true;
@@ -67,5 +44,49 @@ public class ImageNativeUtil {
 			type = type.substring(6, type.length());
 		}
 		return type;
+	}
+
+	public static void compressBitmap(String input, String output, boolean optimize, ImageTools.Quality q) {
+		String fileType = getFileType(input);
+		int fileTypeTag = -1;
+		switch (fileType) {
+			case "jpg":
+				fileTypeTag = 1;
+				break;
+			case "jpeg":
+				fileTypeTag = 1;
+				break;
+			case "bmp":
+				fileTypeTag = 1;
+				break;
+			case "png":
+				fileTypeTag = 2;
+				break;
+			default:
+				fileTypeTag = -1;
+				break;
+		}
+		zoomcompress(input.getBytes(), output.getBytes(), optimize, q.getQuality(), fileTypeTag);
+	}
+
+	public static void compressBitmapCut(String input, String output, boolean optimize, ImageTools.Quality q, int s_x, int s_y, int e_x, int e_y) {
+		zoomcompressCut(input.getBytes(), output.getBytes(), optimize, q.getQuality(), s_x, s_y, e_x, e_y);
+	}
+
+	private static void saveBitmap(Bitmap bit, int quality, String fileName, boolean optimize) {
+		compressBitmap(bit, bit.getWidth(), bit.getHeight(), quality, fileName.getBytes(), optimize);
+	}
+
+	private static native String compressBitmap(Bitmap bit, int w, int h, int quality, byte[] fileNameBytes,
+												boolean optimize);
+
+	private static native long zoomcompress(byte[] input, byte[] output, boolean optimize, int q, int fileTypeTag);
+
+
+	private static native long zoomcompressCut(byte[] input, byte[] output, boolean optimize, int q, int s_x, int s_y, int e_x, int e_y);
+
+	static {
+		// System.loadLibrary("jpegcompress");
+		System.loadLibrary("jpegcompressjni");
 	}
 }

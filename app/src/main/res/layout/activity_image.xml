@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.gjs.developresponsity.activity.image.ImageActivity">
+    tools:context="com.gjs.developresponsity.activity.ImageActivity">
+
+
 
 </android.support.constraint.ConstraintLayout>
