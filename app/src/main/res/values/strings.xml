@@ -1,11 +1,32 @@
 <resources>
     <string name="app_name">DevelopResponsity</string>
     <string name="delete">删除</string>
+    <string name="text_default">default</string>
     <string name="more">更多</string>
     <string name="function_swiper">SwiperRevealLayout</string>
     <string name="function_image_tool">ImageCompress</string>
     <string name="function_audio_tool">audio</string>
     <string name="function_greendao_tool">greendao</string>
+    <string name="function_drawer">抽屉菜单</string>
+    <string name="video_start">开始</string>
+    <string name="video_pause">暂停</string>
+    <string name="video_stop">停止</string>
+
+    <string name="video_prepare">准备下载</string>
+    <string name="video_waitting">等待下载</string>
+    <string name="video_downloading">正在下载</string>
+    <string name="video_complete">下载完成</string>
+    <string name="video_file_not_exist">下载文件丢失</string>
+    <string name="video_error">下载出错</string>
+    <string name="video_retry">失败重试</string>
+    <string name="video_paused">下载暂停</string>
+    <string name="video_unknown">发生未知错误</string>
+    <string name="video_touch_exit">轻触退出</string>
+    <string name="video_touch_send">轻触发送</string>
+    <string name="video_down_fail_hint">加载失败，请重试</string>
+    <string name="history_delete_cancel">撤销</string>
+    <string name="history_scale_cancel">取消</string>
+    <string name="feinno_sure">确定</string>
 
     <string name="swiper_awesome_layout_1">My awesome layout 1</string>
     <string name="swiper_awesome_layout_2">My awesome layout 2</string>
@@ -16,5 +37,20 @@
     <string name="function_swiper_grid">GridView</string>
     <string name="function_swiper_recycler">RecyclerView</string>
 
-    <string name="down_progress">%1$d%</string>
+    <string name="down_progress">%1$d%%</string>
+    <string name="downing">正在下载</string>
+    <string name="down_wait">等待下载</string>
+
+    <string name="title_activity_video_play">VideoPlayActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <string name="title_activity_video_playtwo">VideoPlaytwoActivity</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
 </resources>

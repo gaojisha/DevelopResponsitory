@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:layout_marginRight="@dimen/dp_ten"
     android:layout_marginLeft="@dimen/dp_ten"
-    app:layout_constraintRight_toRightOf="parent"
-    app:layout_constraintLeft_toLeftOf="parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <ImageView
@@ -26,7 +24,8 @@
         app:layout_constraintBottom_toTopOf="@id/recycler_video_descript"
         app:layout_constraintLeft_toRightOf="@id/recycler_video_cover"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="left"/>
 
     <TextView
         android:id="@+id/recycler_video_descript"
@@ -37,16 +36,27 @@
         app:layout_constraintBottom_toTopOf="@id/recycler_video_downProgress"
         app:layout_constraintLeft_toRightOf="@id/recycler_video_cover"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/recycler_video_title" />
+        app:layout_constraintTop_toBottomOf="@id/recycler_video_title"
+        android:gravity="left"/>
 
     <ProgressBar
         android:id="@+id/recycler_video_downProgress"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="0dp"
         android:layout_height="@dimen/dp_ten"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/recycler_is_downing"
         app:layout_constraintLeft_toRightOf="@id/recycler_video_cover"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/recycler_video_descript" />
+
+    <TextView
+        android:id="@+id/recycler_is_downing"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/recycler_video_cover"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/recycler_video_downProgress"
+        android:text="@string/down_progress"/>
 
 </android.support.constraint.ConstraintLayout>

@@ -6,4 +6,12 @@
     <color name="darker_gray">#aaa</color>
     <color name="white">#fff</color>
     <color name="red">#ff0f0f</color>
+    <color name="black">#000000</color>
+    <color name="french_gray">#d6d6d6</color>
+    <color name="split_gray">#e5e5e5</color>
+    <color name="content_gray">#999999</color>
+    <color name="transparent">#00000000</color>
+    <color name="text_color_dark">#333333</color>
+
+    <color name="black_overlay">#66000000</color>
 </resources>

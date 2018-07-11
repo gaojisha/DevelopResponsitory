@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.gjs.developresponsity.activity.DbTestActivity;
+import com.gjs.developresponsity.video.activity.FullVideoPlayActivity;
 import com.gjs.developresponsity.view.SwiperRevealLayoutActivity;
 import com.gjs.developresponsity.activity.AudioActivity;
 import com.gjs.developresponsity.activity.ImageActivity;
@@ -67,6 +68,14 @@ public class MainActivity extends Activity {
      */
     public void greendaotool(View v){
         startActivity(new Intent(MainActivity.this, DbTestActivity.class));
+//        startActivity(new Intent(MainActivity.this, FullVideoPlayActivity.class));
+    }
+
+    /**
+     * 抽屉布局
+     */
+    public void drawerlayout(View v){
+//        startActivity(new Intent(MainActivity.this, Main2Activity.class));
     }
 
     private void sortUtiltest() {

@@ -11,22 +11,36 @@ import android.os.Environment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import org.wlf.filedownloader.DownloadFileInfo;
+import org.wlf.filedownloader.DownloadStatusConfiguration;
+import org.wlf.filedownloader.FileDownloader;
+import org.wlf.filedownloader.listener.OnFileDownloadStatusListener;
+import org.wlf.filedownloader.listener.simple.OnSimpleFileDownloadStatusListener;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class DbTestActivity extends AppCompatActivity {
 
-    private final String videoUrl = "http://2449.vod.myqcloud.com/2449_22ca37a6ea9011e5acaaf51d105342e3.f20.mp4";
+    private final String videoUrl[] = {"http://2449.vod.myqcloud.com/2449_22ca37a6ea9011e5acaaf51d105342e3.f20.mp4"
+    ,"https://gslb.miaopai.com/stream/Zx429HzZ9-QCdorJMHX9JThMK0iByKG41y-v0g__.mp4?yx=&refer=weibo_app&Expires=1530760985&ssig=9sO%2BGTWyRH&KID=unistore"
+    ,"https://gslb.miaopai.com/stream/RsSAxQGmQ-BjSDMCEJTk7iTIxdBt6f7m5UCEyQ__.mp4?yx=&refer=weibo_app&mpflag=32&mpr=1530717319&Expires=1530761558&ssig=5svPuVdQTx&KID=unistore"};
     private TextView tv_progress;//进度显示
     private ProgressBar progressBar;//进度条
     private Button downLoad;//下载按钮
     private Button pause;//暂停按钮
     private String path;//下载路径
     private int max;
+    RecycleVideoAdapter mVideoDownAdapter;
+    private List<DownloadFileInfo> mVideoList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,24 +54,51 @@ public class DbTestActivity extends AppCompatActivity {
         videoDownList.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
 
         //videoAdapter  视频列表适配器
-        RecycleVideoAdapter videoDownAdapter = new RecycleVideoAdapter();
-        videoDownAdapter.setVideoList(this,prepareData());
-
+        mVideoDownAdapter = new RecycleVideoAdapter();
+        mVideoDownAdapter.setVideoList(this,mVideoList);
         //设置数据展示
-        videoDownList.setAdapter(videoDownAdapter);
+        videoDownList.setAdapter(mVideoDownAdapter);
+
+        FileDownloader.registerDownloadStatusListener(mVideoDownAdapter);
     }
 
     /**
      * 测试数据准备
      * @return 测试数据
      */
-    private ArrayList<VideoInfo> prepareData() {
-        ArrayList<VideoInfo>  videoList = new ArrayList();
-        for(int i = 0; i < 20; i++){
-            videoList.add(new VideoInfo(videoUrl,"Video : " + i, videoUrl,"videoDescription : " + i));
+    private void prepareData() {
+//        ArrayList<DownloadFileInfo>  videoList = new ArrayList();
+        for(int i = 0; i < videoUrl.length; i++){
+            FileDownloader.start(videoUrl[i]);
         }
-        return videoList;
+        mVideoList = FileDownloader.getDownloadFiles();
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_down,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if(item.getItemId() == R.id.action_pause_all){
+            if("全部暂停".equals(item.getTitle())) {
+                mVideoDownAdapter.pauseAll();
+                item.setTitle("全部开始");
+            } else if("全部开始".equals(item.getTitle())) {
+                mVideoDownAdapter.startAll();
+                item.setTitle("全部暂停");
+            }
+        }
+        return true;
+    }
+
+
+    @Override
+    protected void onDestroy() {
+        FileDownloader.unregisterDownloadStatusListener(mVideoDownAdapter);
+        super.onDestroy();
+    }
 }
 

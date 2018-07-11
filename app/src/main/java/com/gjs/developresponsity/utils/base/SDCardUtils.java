@@ -24,6 +24,13 @@ public class SDCardUtils {
         throw new UnsupportedOperationException("cannot be instantiated");
     }
 
+    public boolean checkSdcard(){
+        //判断SDcard能否正常写入
+        return Environment.getExternalStorageState().equals("mounted");
+    }
+
+
+
     /**
      * 判断SDCard是否可用
      *
@@ -43,6 +50,10 @@ public class SDCardUtils {
     public static String getSDCardPath() {
         return Environment.getExternalStorageDirectory().getAbsolutePath()
                 + File.separator;
+    }
+
+    public static String getSDCardPathWithFileSeparators() {
+        return Environment.getExternalStorageDirectory().toString() + File.separator;
     }
 
     /**
@@ -75,7 +86,7 @@ public class SDCardUtils {
      * @param context
      * @return 以M,G为单位的容量
      */
-    public static String getAvailableInternalMemorySize(Context context) {
+    public static String getAvailableStore(Context context) {
         File file = Environment.getDataDirectory();
         StatFs statFs = new StatFs(file.getPath());
         long availableBlocksLong = statFs.getAvailableBlocksLong();

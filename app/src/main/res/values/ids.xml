@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+    <item name="videoloader_thumb_uri" type="id" />
+    <item name="videoloader_video_uri" type="id" />
+</resources>

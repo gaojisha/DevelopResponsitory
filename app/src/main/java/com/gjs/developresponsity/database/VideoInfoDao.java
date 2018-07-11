@@ -28,7 +28,8 @@ public class VideoInfoDao extends AbstractDao<VideoInfo, Long> {
         public final static Property VideoCover = new Property(1, String.class, "videoCover", false, "VIDEO_COVER");
         public final static Property VideoTitle = new Property(2, String.class, "videoTitle", false, "VIDEO_TITLE");
         public final static Property VideoUrl = new Property(3, String.class, "videoUrl", false, "VIDEO_URL");
-        public final static Property VideoDescript = new Property(4, String.class, "videoDescript", false, "VIDEO_DESCRIPT");
+        public final static Property VideoPath = new Property(4, String.class, "videoPath", false, "VIDEO_PATH");
+        public final static Property VideoDescript = new Property(5, String.class, "videoDescript", false, "VIDEO_DESCRIPT");
     }
 
 
@@ -48,7 +49,8 @@ public class VideoInfoDao extends AbstractDao<VideoInfo, Long> {
                 "\"VIDEO_COVER\" TEXT," + // 1: videoCover
                 "\"VIDEO_TITLE\" TEXT," + // 2: videoTitle
                 "\"VIDEO_URL\" TEXT," + // 3: videoUrl
-                "\"VIDEO_DESCRIPT\" TEXT);"); // 4: videoDescript
+                "\"VIDEO_PATH\" TEXT," + // 4: videoPath
+                "\"VIDEO_DESCRIPT\" TEXT);"); // 5: videoDescript
     }
 
     /** Drops the underlying database table. */
@@ -81,9 +83,14 @@ public class VideoInfoDao extends AbstractDao<VideoInfo, Long> {
             stmt.bindString(4, videoUrl);
         }
  
+        String videoPath = entity.getVideoPath();
+        if (videoPath != null) {
+            stmt.bindString(5, videoPath);
+        }
+ 
         String videoDescript = entity.getVideoDescript();
         if (videoDescript != null) {
-            stmt.bindString(5, videoDescript);
+            stmt.bindString(6, videoDescript);
         }
     }
 
@@ -111,9 +118,14 @@ public class VideoInfoDao extends AbstractDao<VideoInfo, Long> {
             stmt.bindString(4, videoUrl);
         }
  
+        String videoPath = entity.getVideoPath();
+        if (videoPath != null) {
+            stmt.bindString(5, videoPath);
+        }
+ 
         String videoDescript = entity.getVideoDescript();
         if (videoDescript != null) {
-            stmt.bindString(5, videoDescript);
+            stmt.bindString(6, videoDescript);
         }
     }
 
@@ -129,7 +141,8 @@ public class VideoInfoDao extends AbstractDao<VideoInfo, Long> {
             cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1), // videoCover
             cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2), // videoTitle
             cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3), // videoUrl
-            cursor.isNull(offset + 4) ? null : cursor.getString(offset + 4) // videoDescript
+            cursor.isNull(offset + 4) ? null : cursor.getString(offset + 4), // videoPath
+            cursor.isNull(offset + 5) ? null : cursor.getString(offset + 5) // videoDescript
         );
         return entity;
     }
@@ -140,7 +153,8 @@ public class VideoInfoDao extends AbstractDao<VideoInfo, Long> {
         entity.setVideoCover(cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1));
         entity.setVideoTitle(cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2));
         entity.setVideoUrl(cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3));
-        entity.setVideoDescript(cursor.isNull(offset + 4) ? null : cursor.getString(offset + 4));
+        entity.setVideoPath(cursor.isNull(offset + 4) ? null : cursor.getString(offset + 4));
+        entity.setVideoDescript(cursor.isNull(offset + 5) ? null : cursor.getString(offset + 5));
      }
     
     @Override

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/no_title_corner_dialog_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/dp_ten"
+        android:paddingRight="@dimen/dp_ten"
+        android:background="@drawable/bg_white_corners_shape_drawable"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/corner_dialog_content_layout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.8"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/no_title_corner_dialog_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_color_dark"
+                android:gravity="center"
+                android:lineSpacingExtra="@dimen/dp_five"
+                android:textSize="@dimen/sp_sixteen" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:background="@color/split_gray" />
+
+        <LinearLayout
+            android:id="@+id/corner_btn_layout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+
+            <LinearLayout
+                android:id="@+id/no_title_corner_dialog_cancel_layout"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/no_title_corner_dialog_cancel_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/history_scale_cancel"
+                    android:textColor="@color/text_color_dark"
+                    android:textSize="@dimen/sp_sixteen" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/no_title_corner_btn_line"
+                android:layout_width="0.1dp"
+                android:layout_height="wrap_content"
+                android:background="@color/split_gray" />
+
+            <LinearLayout
+                android:id="@+id/no_title_corner_dialog_sure_layout"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/no_title_corner_dialog_sure_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/feinno_sure"
+                    android:textColor="@color/text_color_dark"
+                    android:textSize="@dimen/sp_sixteen" />
+            </LinearLayout>
+          
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

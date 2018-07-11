@@ -20,28 +20,39 @@ public class VideoInfo {
     private String videoCover;
     private String videoTitle;
     private String videoUrl;
+    private String videoPath;
     private String videoDescript;
 
     public VideoInfo(String videoCover, String videoTitle, String videoUrl,
-            String videoDescript) {
+            String videoDescript,String videoPath) {
         this.videoCover = videoCover;
         this.videoTitle = videoTitle;
         this.videoUrl = videoUrl;
+        this.videoPath = videoPath;
         this.videoDescript = videoDescript;
     }
 
-    @Generated(hash = 1572057810)
+    @Generated(hash = 1255610469)
     public VideoInfo(Long id, String videoCover, String videoTitle, String videoUrl,
-            String videoDescript) {
+            String videoPath, String videoDescript) {
         this.id = id;
         this.videoCover = videoCover;
         this.videoTitle = videoTitle;
         this.videoUrl = videoUrl;
+        this.videoPath = videoPath;
         this.videoDescript = videoDescript;
     }
 
     @Generated(hash = 296402066)
     public VideoInfo() {
+    }
+
+    public String getVideoPath() {
+        return videoPath;
+    }
+
+    public void setVideoPath(String videoPath) {
+        this.videoPath = videoPath;
     }
 
     public Long getId() {
