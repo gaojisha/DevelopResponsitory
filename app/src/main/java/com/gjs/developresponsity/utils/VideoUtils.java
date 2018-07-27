@@ -59,6 +59,7 @@ public class VideoUtils {
      */
     public static String getRecordVideoPath() {
         return RECORD_VIDEO_BASE_PATH + "video/"
+//                + IMApp.getInstance().getContactManager().getSelfCard().getUser_id() + "/";
                 + "gaojisha" + "/";
     }
 
@@ -185,35 +186,6 @@ public class VideoUtils {
         Display display = ((WindowManager) context.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay();
         return display.getHeight();
     }
-
-
-    /**
-     * 判断该用户是否被禁言
-     *
-     * @return
-     */
-//    public static boolean isSocialBlockUser(Context context) {
-//        // 社交黑名单开关(0-失效 1-生效)
-//        String isValid = SystemParamManager.getSystemParam(SystemParam.BIG_TYPE_SELF_PARAM, SystemParam.SMALL_TYPE_SELF_PARAM_SOCIAL_BLOCK_SWITCH);
-//        // 社交黑名单类型(0-失效 1-手动拉黑生效 2-禁言M小时 3-禁言N小时)
-//        String validType = SystemParamManager.getSystemParam(SystemParam.BIG_TYPE_SELF_PARAM, SystemParam.SMALL_TYPE_SELF_PARAM_SOCIAL_BLOCK_TYPE);
-//        if ("1".equals(isValid) && "1".equals(validType)) {
-//            String content = context.getString(R.string.chat_forbit_user_forever_tip);
-//            ToastUtils.showtoast(context, content);
-//            return true;
-//        } else if ("1".equals(isValid) && "2".equals(validType)) {
-//            String content = context.getString(R.string.chat_forbit_user_tip);
-//            ToastUtils.showtoast(context, content);
-//            return true;
-//        } else if ("1".equals(isValid) && "3".equals(validType)) {
-//            String content = context.getString(R.string.chat_forbit_user_tip);
-//            ToastUtils.showtoast(context, content);
-//            return true;
-//        } else {
-//            return false;
-//        }
-//    }
-
 
     /**
      * 获取手机音量
@@ -563,6 +535,7 @@ public class VideoUtils {
 
     /**
      * 传入录制小视频路径，获得第一帧图片
+     * @param path 小视频路径
      */
     public static String getFirstImagePath(String path) {
 
@@ -621,7 +594,7 @@ public class VideoUtils {
     /**
      * 保存bitmap到指定路径和名称
      *
-     * @param bitmap
+     * @param fileName 文件名
      * @param path   保存路径
      * @return
      */

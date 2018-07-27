@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/DevelopResponsitory.iml" filepath="$PROJECT_DIR$/DevelopResponsitory.iml" />
-      <module fileurl="file://$PROJECT_DIR$/FileDownloader/FileDownloader.iml" filepath="$PROJECT_DIR$/FileDownloader/FileDownloader.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/swipe-reveal-layout/swipe-reveal-layout.iml" filepath="$PROJECT_DIR$/swipe-reveal-layout/swipe-reveal-layout.iml" />
       <module fileurl="file://$PROJECT_DIR$/yflibrary/yflibrary.iml" filepath="$PROJECT_DIR$/yflibrary/yflibrary.iml" />

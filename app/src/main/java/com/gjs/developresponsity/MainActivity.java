@@ -8,8 +8,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
-import com.gjs.developresponsity.activity.DbTestActivity;
-import com.gjs.developresponsity.video.activity.FullVideoPlayActivity;
+import com.gjs.developresponsity.TestFresco.TestFrescoActivity;
+import com.gjs.developresponsity.video.activity.VideoHistoryActivity;
 import com.gjs.developresponsity.view.SwiperRevealLayoutActivity;
 import com.gjs.developresponsity.activity.AudioActivity;
 import com.gjs.developresponsity.activity.ImageActivity;
@@ -67,7 +67,7 @@ public class MainActivity extends Activity {
      * GreenDao数据库  视频downLoad
      */
     public void greendaotool(View v){
-        startActivity(new Intent(MainActivity.this, DbTestActivity.class));
+        startActivity(new Intent(MainActivity.this, VideoHistoryActivity.class));
 //        startActivity(new Intent(MainActivity.this, FullVideoPlayActivity.class));
     }
 
@@ -76,6 +76,7 @@ public class MainActivity extends Activity {
      */
     public void drawerlayout(View v){
 //        startActivity(new Intent(MainActivity.this, Main2Activity.class));
+        startActivity(new Intent(MainActivity.this, TestFrescoActivity.class));
     }
 
     private void sortUtiltest() {

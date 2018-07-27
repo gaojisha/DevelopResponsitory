@@ -7,7 +7,7 @@ android {
     defaultConfig {
         applicationId "com.gjs.developresponsity"
         minSdkVersion 18
-        targetSdkVersion 26
+        targetSdkVersion 24
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -49,8 +49,19 @@ dependencies {
 
     //fresco
     implementation 'com.facebook.fresco:fresco:0.12.0'
-    implementation 'com.facebook.fresco:imagepipeline-okhttp3:0.12.0'
+//    compile 'com.facebook.fresco:animated-base-support:0.14.1'//API<14的机器支持WEBP需添加
+//    compile 'com.facebook.fresco:animated-gif:0.14.1'//fresco支持GIF动图
+//    compile 'com.facebook.fresco:webpsupport:0.14.1'//fresco支持WEBP
+//    compile 'com.facebook.fresco:animated-webp:0.14.1'//fresco支持WEBP动图
+//    compile 'com.facebook.fresco:imagepipeline-okhttp3:0.14.1'//网络实现层想使用okhttp3，需要添加
 
+    //glide
+    implementation 'com.github.bumptech.glide:glide:4.4.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.4.0'
+//glide 4  相比  glide 3 新增，用于生成Generated API。
+
+    //picasso 最新  github
+//    implementation 'com.squareup.picasso:picasso:2.71828'//https://github.com/square/picasso
     implementation 'com.squareup.picasso:picasso:2.5.1'//picasso图片加载库  在jcenter上
 }
 

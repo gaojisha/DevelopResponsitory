@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:fresco="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/frame_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:clickable="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#110f0f"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    android:id="@+id/im_record_cancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="16dp"
+                    android:padding="7dp"
+                    android:text="@string/cancel"
+                    android:textColor="#ffffff"
+                    android:textSize="16sp"/>
+
+                <ImageView
+                    android:id="@+id/im_record_video_font"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="16dp"
+                    android:padding="5dp"
+                    android:src="@drawable/video_font"/>
+            </RelativeLayout>
+
+
+            <FrameLayout
+                android:id="@+id/im_record_layout"
+                android:layout_width="match_parent"
+                android:layout_height="202.5dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <SurfaceView
+                            android:id="@+id/surfaceview_record"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+
+                        <com.example.testavsdk.tools.TextureVideoView
+                            android:id="@+id/video_review"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:visibility="gone"/>
+                    </FrameLayout>
+
+                    <ImageView
+                        android:id="@+id/imageview_start"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/vstart"/>
+
+                    <ImageView
+                        android:id="@+id/imageview_focus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/video_focus"
+                        android:visibility="gone"/>
+
+                    <TextView
+                        android:id="@+id/textview_zoom"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="center_horizontal"
+                        android:text="@string/double_click_large"
+                        android:textColor="#ffffff"/>
+
+                    <TextView
+                        android:id="@+id/textview_overflow_max"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="@string/im_video_max_num"
+                        android:textColor="#ffffff"
+                        android:visibility="gone"/>
+                </RelativeLayout>
+
+
+                <TextView
+                    android:id="@+id/textview_up_cancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:drawableLeft="@drawable/social_up_release"
+                    android:paddingBottom="20dp"
+                    android:text="@string/up_cancel"
+                    android:textColor="#ffffff"
+                    android:textSize="13sp"
+                    android:visibility="gone"/>
+
+
+                <TextView
+                    android:id="@+id/textview_cancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:drawableLeft="@drawable/release_stop"
+                    android:paddingBottom="20dp"
+                    android:text="@string/release_cancel"
+                    android:textColor="#f7311c"
+                    android:textSize="13sp"
+                    android:visibility="gone"/>
+
+                <TextView
+                    android:id="@+id/textview_more"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:drawableLeft="@drawable/release_stop"
+                    android:paddingBottom="20dp"
+                    android:text="拍完一个，松手再拍一个"
+                    android:textColor="#ffffff"
+                    android:textSize="13sp"
+                    android:visibility="gone"/>
+
+                <TextView
+                    android:id="@+id/textview_fingers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:layout_marginBottom="5dp"
+                    android:text="@string/fingers_not_release"
+                    android:textColor="#ffffff"
+                    android:textSize="13sp"
+                    android:visibility="gone"/>
+            </FrameLayout>
+
+            <RelativeLayout
+                android:id="@+id/im_record_progress_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/black"
+                android:visibility="gone">
+
+                <View
+                    android:id="@+id/im_record_indicator"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#ff6767"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/im_video_operation_rl"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <TextView
+                    android:id="@+id/im_recording"
+                    android:layout_width="124dp"
+                    android:layout_height="124dp"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/social_record_video_round"
+                    android:gravity="center"
+                    android:text="@string/hold_down_record"
+                    android:textColor="#ff6767"
+                    android:textSize="15sp"/>
+
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/imageview_preview"
+                    android:layout_width="@dimen/im_record_preview_width"
+                    android:layout_height="@dimen/im_record_preview_height"
+                    android:layout_alignBottom="@+id/im_recording"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:visibility="gone"
+                    fresco:placeholderImage="@drawable/small_video_circle_default"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/im_video_dialog_rl"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/im_videodialog_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="50dp"
+                    android:src="@drawable/videodialog_no"/>
+
+                <ImageView
+                    android:id="@+id/im_videodialog_yes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="200dp"
+                    android:layout_marginTop="50dp"
+                    android:src="@drawable/videodialog_yes"/>
+
+
+            </RelativeLayout>
+        </LinearLayout>
+    </FrameLayout>
+</RelativeLayout>

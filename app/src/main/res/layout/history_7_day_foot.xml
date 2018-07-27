@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/history_foot_layout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/history_title_height"
+            android:gravity="center"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/history_7_day_hint"
+                android:textColor="@color/history_foot_text_color"
+                android:textSize="@dimen/text_size_12"
+                android:gravity="center"
+                android:layout_centerVertical="true"/>
+        </LinearLayout>
+</LinearLayout>

@@ -35,7 +35,7 @@
         <activity android:name=".activity.ImageActivity" />
         <activity android:name=".activity.AudioActivity" />
         <activity android:name=".activity.PermissionActivity" />
-        <activity android:name=".activity.DbTestActivity" />
+        <activity android:name=".video.activity.VideoHistoryActivity" />
         <activity
             android:name=".video.activity.VideoPlayActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
@@ -51,7 +51,9 @@
             android:label="@string/title_activity_main2"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activity.TestActivity" />
-        <activity android:name=".video.activity.FullVideoPlayActivity"></activity>
+        <activity android:name=".video.activity.FullVideoPlayActivity" />
+        <activity android:name=".TestFresco.TestFrescoActivity" />
+        <activity android:name=".video.activity.VideoCreateActivity"></activity>
     </application>
 
 </manifest>

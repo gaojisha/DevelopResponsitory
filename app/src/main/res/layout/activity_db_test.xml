@@ -52,4 +52,14 @@
         android:text="暂停"
         android:visibility="gone"/>
 
+    <ImageView
+        android:id="@+id/add_new_video"
+        android:layout_width="@dimen/dp_fifty"
+        android:layout_height="@dimen/dp_fifty"
+        android:layout_marginBottom="@dimen/dp_ten"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:onClick="addnewvideo"
+        android:src="@mipmap/add_video"/>
+
 </RelativeLayout>

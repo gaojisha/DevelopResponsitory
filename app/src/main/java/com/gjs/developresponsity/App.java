@@ -1,6 +1,7 @@
 package com.gjs.developresponsity;
 
 import android.app.Application;
+import android.content.Context;
 import android.os.Environment;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
@@ -32,6 +33,7 @@ public class App extends Application {
 
     public static VideoInfoDao videoInfoDao;
     public static UserDao userDao;
+    public static Context CONTEXT;
 
     @Override
     public void onCreate() {
@@ -40,6 +42,8 @@ public class App extends Application {
         Fresco.initialize(getApplicationContext());//Fresco初始化
 
         SdcardImageController.init(getApplicationContext());
+
+        Constants.init(getApplicationContext());
 
         ContextHelper.init(getApplicationContext());
 
@@ -71,4 +75,5 @@ public class App extends Application {
         FileDownloadConfiguration configuration = builder.build();
         FileDownloader.init(configuration);
     }
+
 }
