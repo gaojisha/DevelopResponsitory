@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.gjs.developresponsity">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -41,19 +42,9 @@
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_video_play"
             android:theme="@style/FullscreenTheme" />
-        <activity
-            android:name=".activity.VideoPlaytwoActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/title_activity_video_playtwo"
-            android:theme="@style/FullscreenTheme" />
-        <activity
-            android:name=".Main2Activity"
-            android:label="@string/title_activity_main2"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".activity.TestActivity" />
         <activity android:name=".video.activity.FullVideoPlayActivity" />
         <activity android:name=".TestFresco.TestFrescoActivity" />
-        <activity android:name=".video.activity.VideoCreateActivity"></activity>
+        <activity android:name=".video.activity.VideoCreateActivity"/>
     </application>
 
 </manifest>

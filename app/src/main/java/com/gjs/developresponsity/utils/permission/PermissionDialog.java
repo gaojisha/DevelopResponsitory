@@ -25,6 +25,7 @@ public class PermissionDialog {
     private final onConfirmListener mListener;
     private Dialog mDialog;
     private TextView mTv;
+    private View mDialogContentView;
 
     public PermissionDialog(Context context,onConfirmListener listener){
         this.mContext = context;
@@ -34,9 +35,9 @@ public class PermissionDialog {
 
     private void init(){
         mDialog = new Dialog(mContext, R.style.custom_dialog2);
-        View dialogContentView = LayoutInflater.from(mContext).inflate(R.layout.dialog_permission,null);
-        mTv = dialogContentView.findViewById(R.id.tv_dialog_permission_content);
-        Button btnConfirm = dialogContentView.findViewById(R.id.btn_dialog_permission_comfrim);
+        mDialogContentView = LayoutInflater.from(mContext).inflate(R.layout.dialog_permission,null);
+        mTv = mDialogContentView.findViewById(R.id.tv_dialog_permission_content);
+        Button btnConfirm = mDialogContentView.findViewById(R.id.btn_dialog_permission_comfrim);
         btnConfirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,7 +47,7 @@ public class PermissionDialog {
                 }
             }
         });
-        mDialog.setContentView(dialogContentView);
+        mDialog.setContentView(mDialogContentView);
     }
 
     public void setmTvContent(String content){

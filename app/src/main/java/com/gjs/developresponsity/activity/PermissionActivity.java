@@ -1,6 +1,5 @@
 package com.gjs.developresponsity.activity;
 
-import android.Manifest;
 import android.content.Intent;
 import android.net.Uri;
 import android.provider.Settings;
@@ -8,10 +7,9 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.view.View;
 
-import com.example.lyf.yflibrary.DeleteDialog;
-import com.gjs.developresponsity.R;
+import com.gjs.developresponsity.utils.permission.DeleteDialog;
+import com.gjs.developresponsity.utils.permission.Permission;
 import com.gjs.developresponsity.utils.permission.PermissionDialog;
 import com.gjs.developresponsity.utils.permission.PermissionUtil;
 
@@ -179,7 +177,7 @@ public class PermissionActivity extends AppCompatActivity {
     public void onRequestPermissionsResult(int requestCode, final String[] permissions, int[] grantResults) {
 
         if (requestCode == REQUEST_PERMISSION_CODE_TAKE_PIC) {
-            if (com.example.lyf.yflibrary.PermissionUtil.verifyPermissions(grantResults)) {//有权限
+            if (PermissionUtil.verifyPermissions(grantResults)) {//有权限
                 finish();
                 if (mPermissionResult != null) {
                     mPermissionResult.success();
@@ -187,7 +185,7 @@ public class PermissionActivity extends AppCompatActivity {
 
             } else {
                 //没有权限
-                if (!com.example.lyf.yflibrary.PermissionUtil.shouldShowPermissions(this, permissions)) {//这个返回false 表示勾选了不再提示
+                if (!PermissionUtil.shouldShowPermissions(this, permissions)) {//这个返回false 表示勾选了不再提示
                     startToSetting();
                 } else {
                     //表示没有权限 ,但是没勾选不再提示
@@ -206,9 +204,9 @@ public class PermissionActivity extends AppCompatActivity {
         } else {
             super.onRequestPermissionsResult(requestCode, permissions, grantResults);
             finish();
-            if (com.example.lyf.yflibrary.Permission.mPermissionResult != null) {
+            if (Permission.mPermissionResult != null) {
 
-                com.example.lyf.yflibrary.Permission.mPermissionResult.fail();
+                Permission.mPermissionResult.fail();
             }
         }
     }

@@ -102,7 +102,8 @@ public class MainActivity extends Activity {
         int[] shellData = SortUtils.getInstance().shellSort(shellSortData);
         int[] heapData = SortUtils.getInstance().heapSort(heapSortData);
         int[] mergingData = SortUtils.getInstance().mergingSort(mergingSortData);
-        int[] quickData = SortUtils.getInstance().quickSort(quickSortData);
+        SortUtils.getInstance().quickSort(quickSortData,0,0);
+        int[] quickData = quickSortData;
 
 //        for (int i = 0 ; i < simpleData.length; i++) {
 //            Log.i("developutil", "simpleSortlist : " + simpleData[i]);
@@ -125,12 +126,12 @@ public class MainActivity extends Activity {
 //        for(int i = 0 ; i < heapData.length ; i++) {
 //            Log.i("developutil", "heaplist : " + heapData[i]);
 //        }
-        for(int i = 0 ; i < mergingData.length ; i++) {
-            Log.i("developutil", "merginglist : " + mergingData[i]);
-        }
-//        for(int i = 0 ; i < quickData.length ; i++) {
-//            Log.i("developutil", "merginglist : " + quickData[i]);
+//        for(int i = 0 ; i < mergingData.length ; i++) {
+//            Log.i("developutil", "merginglist : " + mergingData[i]);
 //        }
+        for(int i = 0 ; i < quickData.length ; i++) {
+            Log.i("developutil", "merginglist : " + quickData[i]);
+        }
 
     }
 
